@@ -1,3 +1,20 @@
+{*******************************************************}
+{                                                       }
+{       CheckVat                                        }
+{       Esempio dell'utilizzo di un servizio SOAP       }
+{                                                       }
+{       Per l'utilizzo in altre applicazioni            }
+{       è necessario includere il pas checkVatService   }
+{                                                       }
+{       Nel Memo sarà restituita la risposta del        }
+{       Servizio o il messaggio di errore               }
+{                                                       }
+{       Copyright (C) 2021 Muzio Valerio                }
+{                                                       }
+{       Lincenza Apache 2.0                             }
+{                                                       }
+{*******************************************************}
+
 unit uMain;
 
 interface
@@ -57,7 +74,7 @@ begin
     if not lResponse.valid then
     begin
       Memo1.Lines.Add(
-        Format('La Partita IVA %s ricerca non è registrata come operatore Intracomunitario', [edtPIVAVer.Text]));
+        Format('La Partita IVA %s ricercata non è registrata come operatore Intracomunitario', [edtPIVAVer.Text]));
     end
     else
     begin
@@ -79,7 +96,7 @@ function TForm1.ValidateEntry: Boolean;
 begin
   if (Trim(edtNazVer.Text) = '') or (Trim(edtPIVAVer.Text)= '') then
   begin
-    MessageDlg('La Nazione e la Partita IVA da Verificare sono obbligatori', mtWarning, [mbOK], -1);
+    MessageDlg('La Nazione e la Partita IVA da verificare sono obbligatori', mtWarning, [mbOK], -1);
     Exit(False);
   end;
 
