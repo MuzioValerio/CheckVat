@@ -1,2 +1,4 @@
 # CheckVat
-Delphi SOAP to Check VAT European
+Utilizzo in Delphi del servizio SOAP per la verifica delle partite IVA Europee
+
+Realizzato da Muzio Valerio
